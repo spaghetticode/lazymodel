@@ -41,6 +41,13 @@ class SampleModelTest < ActiveSupport::TestCase
     assert_empty attributes.values - @model.attributes.values
   end
 
+  test 'allows for translations' do
+    translations = {:activemodel => {:models => {:sample_model => 'Sample'}}}
+    I18n.backend.store_translations :en, translations
+    assert_equal 'Sample', @model.class.model_name.human
+    I18n.backend.reload!
+  end
+
   private
 
   def set_model_attributes

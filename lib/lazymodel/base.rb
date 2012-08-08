@@ -3,6 +3,7 @@ module Lazymodel
     extend ActiveModel::Naming
     include ActiveModel::Conversion
     include ActiveModel::Validations
+    include ActiveModel::Translations
     include ActiveModel::AttributeMethods
 
     class << self
