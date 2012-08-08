@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ['andrea longhi']
   s.email       = ['andrea@spaghetticode.it']
   s.homepage    = ''
-  s.summary     = 'lazymodel ia activemodel goodness for lazy people'
+  s.summary     = 'lazymodel is activemodel goodness for lazy people'
   s.description = 'adds basic activemodel goodness to your class in a eyeblink'
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.rdoc']
