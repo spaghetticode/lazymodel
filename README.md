@@ -13,7 +13,7 @@ Create the model class that gets ActiveModel features. The key point is having
 the class inherit from ```Lazymodel::Base```
 ```ruby
 class Person < Lazymodel::Base
-  has_attributes :name, :surname, :suffix => '?'
+  activemodel_attributes :name, :surname, :suffix => '?'
 
   validates :name, :surname, :presence => true
 
@@ -29,10 +29,9 @@ This will grant you the power of the following modules:
 ActiveModel::Naming
 ActiveModel::Concern
 ActiveModel::Validations
-ActiveModel::Translations
 ActiveModel::AttributeMethods
 ```
-Via the class macro ```has_attributes``` you can define in a single call the
+Via the class macro ```activemodel_attributes``` you can define in a single call the
 model attributes and its prefixed and suffixed methods. You also get reasonable
 ``` initialize, to_model, persisted?, attributes``` method defaults.
 

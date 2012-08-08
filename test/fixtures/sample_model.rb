@@ -1,5 +1,5 @@
 class SampleModel < Lazymodel::Base
-  has_attributes :name, :surname, :prefix => 'clear_', :suffix => '?'
+  activemodel_attributes :name, :surname, :prefix => 'clear_', :suffix => '?'
 
   private
 

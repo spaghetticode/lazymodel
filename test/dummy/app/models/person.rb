@@ -1,5 +1,5 @@
 class Person < Lazymodel::Base
-  has_attributes :name, :surname
+  activemodel_attributes :name, :surname
 
   validates :name, :surname, :presence => true
 end

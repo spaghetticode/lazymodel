@@ -3,11 +3,10 @@ module Lazymodel
     extend ActiveModel::Naming
     include ActiveModel::Conversion
     include ActiveModel::Validations
-    include ActiveModel::Translations
     include ActiveModel::AttributeMethods
 
     class << self
-      def has_attributes(*args)
+      def activemodel_attributes(*args)
         opts = args.extract_options!
         # define attributes and prefixed/suffixed methods
         attr_accessor *args
