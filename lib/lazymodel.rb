@@ -1,0 +1,2 @@
+module Lazymodel
+end
