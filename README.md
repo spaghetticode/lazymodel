@@ -1,5 +1,7 @@
 # Lazymodel
 
+[![Build Status](https://secure.travis-ci.org/spaghetticode/lazymodel.png)](http://travis-ci.org/spaghetticode/lazymodel)
+
 This rails gem helps get ActiveModel goodies without the hassle to write a ton
 of code.
 
