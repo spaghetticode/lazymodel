@@ -10,7 +10,7 @@ Add to your gemfile:
 gem 'lazymodel'
 ```
 Create the model class that gets ActiveModel features. The key point is having
-the class inherit from Lazymodel::Base
+the class inherit from ```Lazymodel::Base```
 ```ruby
 class Person < Lazymodel::Base
   has_attributes :name, :surname, :suffix => '?'
@@ -34,7 +34,8 @@ ActiveModel::AttributeMethods
 ```
 Via the class macro ```has_attributes``` you can define in a single call the
 model attributes and its prefixed and suffixed methods. You also get reasonable
-``` initialize, to_model, persisted?``` method defaults.
+``` initialize, to_model, persisted?, attributes``` method defaults.
+
 The class complies with ```ActiveModel::Lint::Tests``` specifications.
 
 ## Todo
