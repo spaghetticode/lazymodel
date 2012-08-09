@@ -33,12 +33,17 @@ class SampleModelTest < ActiveSupport::TestCase
   end
 
   test 'has expected attributes' do
-    attributes = {
-      'name'    => 'john',
-      'surname' => 'doe'
-    }
-    assert_empty attributes.keys - @model.attributes.keys
-    assert_empty attributes.values - @model.attributes.values
+    expected = [[:name, 'john'], [:surname, 'doe']]
+    expected.each do |arr|
+      attribute, value = arr
+      assert_equal value, @model.attributes[attribute]
+    end
+    assert_equal expected.size, @model.attributes.size
+  end
+
+  test 'attributes can be accessed both with hash and string keys' do
+    assert @model.attributes[:name]
+    assert_equal @model.attributes[:name], @model.attributes['name']
   end
 
   test 'allows for translations' do
