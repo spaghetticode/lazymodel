@@ -53,6 +53,14 @@ class SampleModelTest < ActiveSupport::TestCase
     I18n.backend.reload!
   end
 
+  test 'when calling a callback enabled method, callbacks are called' do
+    @model.expects(:capitalize_attributes)
+    @model.save
+    @model.expects(:notify_admin)
+    @model.expects(:update_genealogy)
+    @model.update
+  end
+
   private
 
   def set_model_attributes

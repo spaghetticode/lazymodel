@@ -4,6 +4,7 @@ module Lazymodel
     include ActiveModel::Conversion
     include ActiveModel::Validations
     include ActiveModel::AttributeMethods
+    extend ActiveModel::Callbacks
 
     class << self
       def activemodel_attributes(*args)
@@ -12,6 +13,7 @@ module Lazymodel
         attr_accessor *args
         define_prefix_or_affix_method :prefix, opts[:prefix]
         define_prefix_or_affix_method :suffix, opts[:suffix]
+        define_callbacks_macros(opts[:callbacks]) if opts[:callbacks]
         define_attribute_methods args
         # _attributes stores at class level the
         # the attribute names
@@ -20,6 +22,17 @@ module Lazymodel
       end
 
       private
+
+      def define_callbacks_macros(callbacks)
+        callbacks.keys.map do |key|
+          key.to_s.sub(/^(before_|after_|around_)/, '')
+        end.uniq.each do |method|
+          define_model_callbacks method
+        end
+        callbacks.each do |type, methods|
+          send type, *Array.wrap(methods)
+        end
+      end
 
       def define_prefix_or_affix_method(type, values)
         Array.wrap(values).each do |value|
