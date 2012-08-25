@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Lazymodel::VERSION
   s.authors     = ['andrea longhi']
   s.email       = ['andrea@spaghetticode.it']
-  s.homepage    = ''
+  s.homepage    = 'https://github.com/spaghetticode/lazymodel'
   s.summary     = 'lazymodel is activemodel goodness for lazy people'
   s.description = 'adds basic activemodel goodness to your class in a eyeblink'
 
