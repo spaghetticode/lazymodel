@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/spaghetticode/lazymodel'
   s.summary     = 'lazymodel is activemodel goodness for lazy people'
   s.description = 'adds basic activemodel goodness to your class in a eyeblink'
+  s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
